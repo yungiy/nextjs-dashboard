@@ -102,6 +102,7 @@ async function seedRevenue() {
 }
 
 export async function GET() {
+  console.log('Database URL from env:', process.env.POSTGRES_URL);
   try {
     const result = await sql.begin((sql) => [
       seedUsers(),
